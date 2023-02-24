@@ -13,10 +13,25 @@ img {
   max-width: 100%;
 }
 
+h2 {
+  color: white;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 :root {
   --player-height: 100px;
-  --sidebar-widht: 200px;
+  --sidebar-width: 200px;
   --header-height: 80px;
+  --sidebar-width-mobile: 50px;
 }
 /* MAIN */
 .wrapper {
@@ -33,36 +48,88 @@ img {
 }
 
 .player {
-  background-color: lightcoral;
+  background-color: hsl(0deg 0% 16%);
   height: var(--player-height);
   width: 100%;
 }
 
 .sidebar {
-  width: var(--sidebar-widht);
+  width: var(--sidebar-width);
   height: 100%;
   background-color: black;
 }
 
 .content {
-  padding: var(--header-height) 1rem 1rem;
+  padding: var(--header-height) 2rem 2rem;
   overflow-y: auto;
   height: 100%;
-  width: calc(100% - var(--sidbar-widht));
-  background-color: lightgray;
+  width: calc(100% - var(--sidebar-width));
+  background-color: hsl(219deg 26% 11%);
 }
 
 .cta {
   position: fixed;
   top: 0;
   right: 0;
-  left: 200px;
+  text-align: right;
+  padding-top: 1.8rem;
+  padding-right: 0.5rem;
   height: var(--header-height);
-  width: calc(100% - var(--sidbar-widht));
+  width: calc(100% - var(--sidebar-width));
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 .cta-btn {
+  font-size: 12px;
+  padding: 0.5rem 2rem;
+  border: 2px solid white;
+  border-radius: 2rem;
   text-decoration: none;
   color: white;
+}
+
+.tabs {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.tabs > button {
+  font-weight: 500;
+  color: hsl(223deg 3% 50%);
+}
+
+.tabs > button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.albums-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+}
+
+.album {
+  width: calc(100% / 6 - 1rem);
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    width: var(--sidebar-width-mobile);
+  }
+
+  .content {
+    width: calc(100% - var(--sidebar-width-mobile));
+  }
+
+  .cta {
+    width: calc(100% - var(--sidebar-width-mobile));
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .album {
+    width: calc(100% / 4 - 1rem);
+  }
 }
