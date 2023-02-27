@@ -118,6 +118,7 @@ button {
 
 .sidebar-down {
 }
+
 .cta {
   position: fixed;
   top: 0;
@@ -284,8 +285,7 @@ button {
   border-radius: 2px;
   width: 100%;
 }
-/* ---------------------------- */
---------/* MEDIAQUERY */-------
+/* -------------MEDIAQUERY--------------- */
 /* ---------------------------- */
 /* MOBILE-XS-600PX */
 /* MOBILE-S-700PX */
@@ -294,6 +294,7 @@ button {
 /* ----------------------------- */
 
 /* MOBILE-XS */
+
 @media screen and (max-width: 600px) {
   .sidebar {
     width: var(--sidebar-width-mobile);
